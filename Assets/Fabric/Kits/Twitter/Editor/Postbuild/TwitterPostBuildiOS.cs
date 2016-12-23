@@ -60,6 +60,9 @@ namespace Fabric.Internal.Twitter.Editor.Postbuild
 
 		private static void CheckiOSVersion()
 		{
+#if UNITY_5_5_OR_NEWER
+			var isOldiOSVersion = new System.Version (PlayerSettings.iOS.targetOSVersionString) < new System.Version ("7.0");
+#else
 			iOSTargetOSVersion[] oldiOSVersions = {
 				iOSTargetOSVersion.iOS_4_0,
 				iOSTargetOSVersion.iOS_4_1,
@@ -70,6 +73,7 @@ namespace Fabric.Internal.Twitter.Editor.Postbuild
 				iOSTargetOSVersion.iOS_6_0
 			};
 			var isOldiOSVersion = oldiOSVersions.Contains (PlayerSettings.iOS.targetOSVersion);
+#endif
 			
 			if (isOldiOSVersion) {
 				Fabric.Internal.Editor.Utils.Error ("Twitter requires iOS 7+. Please change the Target iOS Version in Player Settings to iOS 7 or higher.");
