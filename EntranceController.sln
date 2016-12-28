@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntranceController", "Entra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntranceController.Editor.Plugins", "EntranceController.Editor.Plugins.csproj", "{898ED78E-9CBA-01C9-8304-A6068FB3469E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntranceController.Editor", "EntranceController.Editor.csproj", "{5FB5DAFF-3078-567E-656D-1101CD942206}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,10 +25,6 @@ Global
 		{898ED78E-9CBA-01C9-8304-A6068FB3469E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{898ED78E-9CBA-01C9-8304-A6068FB3469E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{898ED78E-9CBA-01C9-8304-A6068FB3469E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5FB5DAFF-3078-567E-656D-1101CD942206}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5FB5DAFF-3078-567E-656D-1101CD942206}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5FB5DAFF-3078-567E-656D-1101CD942206}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5FB5DAFF-3078-567E-656D-1101CD942206}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
