@@ -10,6 +10,8 @@ namespace Slack
 {
     public class ActionTeamCallBack : MonoBehaviour
     {
+        public ToggleGroup toggleGroup;
+        /*
         /// <summary>
         /// 3D班
         /// </summary>
@@ -39,6 +41,8 @@ namespace Slack
         /// </summary>
         [SerializeField]
         Toggle ToggleWeb = null;
+*/
+/*
 
         /// <summary>
         /// 3D:SwitchState
@@ -83,6 +87,23 @@ namespace Slack
         public bool IsGetToggleWeb()
         {
             return ToggleWeb.isOn;
+        }*/
+
+        public string OnClickAction()
+        {
+            string selectLabel;
+            string nullLabel= "未入力";
+
+            if (toggleGroup.AnyTogglesOn())
+            {
+                selectLabel = toggleGroup.ActiveToggles().First().name;
+
+
+                Debug.Log(selectLabel);
+                return selectLabel;
+            }
+
+            return nullLabel;
         }
     }
 }
