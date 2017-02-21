@@ -25,27 +25,101 @@ namespace Slack
         ActionTeamCallBack actionCallBack = null;
 
         /// <summary>
+        /// test機能
+        /// ゆかりさん話す
+        /// </summary>
+        public void OnclickYukarin()
+        {
+            
+            var yukarinData = new PostMessageData
+            {
+                token = "",//トークン
+                channel = "unity",
+                icon_url = "http://img.atwikiimg.com/www65.atwiki.jp/kindaidensan/attach/33/36/yukarisan.PNG",
+                username = "yukari",
+                text = "Hello Master",
+            };
+
+            //コルーチンデータ
+            var yukariRoutine = SlackAPI.PostMessage(yukarinData);
+
+            //コルーチンの開始(メッセージ送信の開始)
+            StartCoroutine(yukariRoutine);
+        }
+
+        /// <summary>
         /// 入室ボタン入力時の処理
         /// </summary>
         public void OnClickEnterance()
         {
             //送信するデータ
-            var data = new PostMessageData
+            var messageData = new PostMessageData
             {
-                //token = "",//トークン
+                token = "",//トークン
 
-                //channel = "",//チャネル名
+                channel = "entry_and_exit",//actionCallBack.OnClickAction(),//チャネル名
 
                 //icon_url = "",//iconの画像url
 
-                //username="",//botの名前
+                username = "background",//botの名前
 
-                //text = "",//メッセージテキスト
+                text = "入室:現在時刻は" + DateTime.Now
+                + ". 入室した班は" + actionCallBack.OnClickAction()
+                + "\n追加メッセージ:" + TextInputField.SaveMessage()
+                ,//メッセージテキスト
 
             };
+            /*
+            var yukarinData = new PostMessageData
+            {
+                token = "",//トークン
+                channel = "unity",
+                icon_url = "http://img.atwikiimg.com/www65.atwiki.jp/kindaidensan/attach/33/36/yukarisan.PNG",
+                username = "yukari",
+                text = "Hello Master",
+            };*/
             
             //コルーチンデータ
-            var routine = SlackAPI.PostMessage(data);
+            var routine = SlackAPI.PostMessage(messageData);
+
+            //コルーチンの開始(メッセージ送信の開始)
+            StartCoroutine(routine);
+        }
+
+        /// <summary>
+        /// 退室ボタン入力時の処理
+        /// </summary>
+        public void OnClickExit()
+        {
+            //送信するデータ
+            var messageData = new PostMessageData
+            {
+                token = "",//トークン
+
+                channel = "entry_and_exit",//actionCallBack.OnClickAction(),//チャネル名
+
+                //icon_url = "",//iconの画像url
+
+                username = "background",//botの名前
+
+                text = "退室:現在時刻は" + DateTime.Now
+                + ". 退室した班は" + actionCallBack.OnClickAction()
+                + "\n追加メッセージ:" + TextInputField.SaveMessage()
+                ,//メッセージテキスト
+
+            };
+            /*
+            var yukarinData = new PostMessageData
+            {
+                token = "",//トークン
+                channel = "unity",
+                icon_url = "http://img.atwikiimg.com/www65.atwiki.jp/kindaidensan/attach/33/36/yukarisan.PNG",
+                username = "yukari",
+                text = "Hello Master",
+            };*/
+
+            //コルーチンデータ
+            var routine = SlackAPI.PostMessage(messageData);
 
             //コルーチンの開始(メッセージ送信の開始)
             StartCoroutine(routine);

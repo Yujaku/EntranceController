@@ -25,9 +25,14 @@ namespace Slack
         public string SaveMessage()
         {
             textData = inputTextField.text;
-            inputTextField.text = null;
-            Debug.Log(textData);
-            return textData;
+            string textNull="なし";
+            if (textData != null)
+            {
+                inputTextField.text = null;
+                Debug.Log(textData);
+                return textData;
+            }
+            return textNull;
         }
     }
 }
